@@ -1,0 +1,51 @@
+{
+  "short_name": "Potato Destroyer",
+  "name": "Potato Destroyer",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/icons/icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "img/icons/icon-96x96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/icons/icon-120x120.png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "img/icons/icon-128x128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "img/icons/icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/icons/icon-152x152.png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "img/icons/icon-180x180.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "img/icons/icon-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/icon-384x384.png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "img/icons/icon-512x512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

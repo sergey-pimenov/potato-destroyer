@@ -1,0 +1,23 @@
+// Paths
+$img : '../img';
+$fonts : '../fonts';
+
+
+// Typograhpy
+$systemFonts: -apple-system,
+               BlinkMacSystemFont,
+               "Segoe UI",
+               Roboto,
+               Oxygen-Sans,
+               Ubuntu,
+               Cantarell,
+							 "Helvetica Neue",
+               Helvetica,
+               Arial;
+
+// Breakpoints
+$mobile-max: 768px;
+$tablet-min: 769px;
+$tablet-max: 1227px;
+$desktop: 1228px;
+$small-height: 470px;

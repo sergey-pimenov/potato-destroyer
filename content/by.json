@@ -1,0 +1,31 @@
+{
+  "start" : "СТАРТ!",
+  "resume" : "ПРАДОЎЖЫЦЬ",
+  "installHighlight" : "Магчыма ўсталяваць",
+  "restart" : "НАНОВА",
+  "gameOver" : "ГЕЙМ ОВЕР",
+  "aboutDescription" : "Гэта бясплатная і опенсорсная гульня зроблена Сярожам Піменавым",
+  "sources" : "Зыходнікі",
+  "mail" : "pimenov.web@gmail.com",
+  "install" : "УСТАЛЯВАЦЬ",
+  "record" : "РЭКОРД:",
+  "accelerometerNotSupportedAlert" : "На жаль, ваша прылада не мае датчык нахілу",
+  "accelerometerNotSupportedDesc" : "Калі ласка, скарыстайцеся іншым смартфонам або запусціце гульню на кампутары",
+  "dragTooltip" : "ЦЯГАЙ ЖУКА Ў БОК КАБ РУХАЦЦА",
+  "share" : {
+    "buttonName" : "ПАДЗЯЛІЦЦА",
+    "title" : "Бульба Знішчальнік",
+    "descriptiom" : "Бясплатная гульня без рэкламы пра каларадскага жука",
+    "link" : "https://test-2.com",
+    "img" : "https://www.gannett-cdn.com/-mm-/f5631f1aa54f5f3d4f524e474eb1bd04e3109397/c=0-267-3068-2000/local/-/media/2017/01/18/Phoenix/Phoenix/636203462330173396-trees-14.jpg?width=580&height=326&fit=crop",
+    "tags" : "Булбачка, каларадскіЖук, гульняЗПластыліну"
+  },
+  "iosInstructions" : {
+    "tap": "ТЫКНІ",
+    "thenTapTo": "А ЗЫТЫМ ТЫКНІ"
+  },
+  "playOnMobile" : {
+    "title" : "На тэлефоне весялей!",
+    "closeButton" : "ГУЛЯЦЬ ТУТ"
+  }
+}

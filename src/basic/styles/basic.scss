@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('../../static/robotomono-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Fonts
+$app-font: 'Roboto Mono', monospace;
+$content-font: -apple-system,
+               BlinkMacSystemFont,
+               "Segoe UI",
+               Roboto,
+               Oxygen-Sans,
+               Ubuntu,
+               Cantarell,
+							 "Helvetica Neue",
+               Helvetica,
+               Arial;
+
+
+// Colors
+$basicColor: white;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+html,
+body {
+  position: fixed;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  font-family: $content-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: '';
+    width: 105%;
+    height: 105%;
+    position: absolute;
+    left: -2.5%;
+    top: -2.5%;
+    filter: saturate(65%);
+    -webkit-font-smoothing : none;
+    font-smooth: never;
+    image-rendering: pixelated;
+  }
+
+  &.notMobile::before {
+    background: url(../img/bg-3.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  
+  &.mobile {
+    background: rgb(0, 0, 0);
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @at-root body.mobile & {
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+  }
+}
+
+.game {
+  width: 375px;
+  height: 600px;
+
+  @media all and (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  @at-root body.notMobile & {
+    border: 7px solid rgb(0, 0, 0);
+    // border-radius: 8px;
+  }
+}
+
+.subLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgb(30, 30, 30);
+  transition: opacity 0.4s;
+
+  &::before {
+    content: '';
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    animation: loader 0.9s infinite;
+    background: url(../img/loader.png) center center no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    content: '';
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    animation: loader 0.9s 0.015s infinite;
+    // background: url(../img/loader.png) center center no-repeat;
+    background-size: contain;
+  }
+}
+
+@keyframes loader {
+  50% {
+    transform: rotateZ(180deg) scale(0.7);
+  }
+
+  100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+}
+
+body.hidePreloader .loader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.glasses .game {
+  // filter: brightness(1) hue-rotate(250deg);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(228, 228, 228); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  transition: 3s all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(109, 108, 108); 
+}
+
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  body::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgb(30, 30, 30) url(../img/rotatePhone.png) no-repeat center center;
+    background-size: 130px auto;
+    z-index: 11;
+  }
+
+  body.safari::after {
+    background: rgb(30, 30, 30) url(../img/rotatePhone.png) no-repeat center 20%;
+    background-size: 130px auto;
+  }
+}
+
+.pauseButton {
+  width: 30px;
+  height: 28px;
+  background: url(../img/pause.png) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  left: 20px;
+  top: 17px;
+  cursor: pointer;
+  transition: 0.3s opacity;
+  pointer-events: auto;
+}

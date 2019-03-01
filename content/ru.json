@@ -1,0 +1,31 @@
+{
+  "start" : "НАЧАТЬ!",
+  "resume" : "ПРОДОЛЖИТЬ",
+  "installHighlight" : "Можно установить",
+  "restart" : "ПОВТОРИТЬ",
+  "gameOver" : "ГЕЙМ ОВЕР",
+  "aboutDescription" : "Эта опенсорсная игрушка сделана Cерёгой Пименовым",
+  "sources" : "Исходники",
+  "mail" : "pimenov.web@gmail.com",
+  "install" : "УСТАНОВИТЬ",
+  "record" : "РЕКОРД:",
+  "accelerometerNotSupportedAlert": "К сожалению, ваше устройство не имеет датчик наклона",
+  "accelerometerNotSupportedDesc": "Пожалуйста, воспользуйтесь другим мобильным устройством или запустите игру на компьютере",
+  "dragTooltip" : "ТАСКАЙ ЖУКА ЧТОБЫ ДВИГАТЬСЯ",
+  "share" : {
+    "buttonName" : "ПОДЕЛИТЬСЯ",
+    "title" : "Бульба Дистроер",
+    "descriptiom" : "Бесплатная игра без рекламы про колорадского жука",
+    "link" : "https://test-2.com",
+    "img" : "https://www.gannett-cdn.com/-mm-/f5631f1aa54f5f3d4f524e474eb1bd04e3109397/c=0-267-3068-2000/local/-/media/2017/01/18/Phoenix/Phoenix/636203462330173396-trees-14.jpg?width=580&height=326&fit=crop",
+    "tags" : "бульба, колорадскийЖук, пластилиноваяИгра"
+  },
+  "iosInstructions" : {
+    "tap": "ТАПНИ",
+    "thenTapTo": "А ЗАТЕМ ТАПНИ"
+  },
+  "playOnMobile" : {
+    "title" : "На смартфоне весялей!",
+    "closeButton" : "ИГРАТЬ ТУТ"
+  }
+}

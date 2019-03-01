@@ -1,0 +1,31 @@
+{
+  "start" : "LETS DESTROY!",
+  "resume" : "RESUME",
+  "installHighlight" : "Can be installed",
+  "restart" : "RESTART",
+  "gameOver" : "GAME OVER",
+  "aboutDescription" : "This free and opensource game created by Sergey Pimenov",
+  "sources" : "Sources",
+  "mail" : "pimenov.web@gmail.com",
+  "install" : "INSTALL",
+  "record" : "RECORD:",
+  "accelerometerNotSupportedAlert": "Unfortunately, your device don't support accelerometer",
+  "accelerometerNotSupportedDesc": "Please, use other smartphone or run game on desktop",
+  "dragTooltip" : "DRAG BEE LEFT/RIGHT TO MOVE",
+  "share" : {
+    "buttonName" : "SHARE",
+    "title" : "Potato Destroyer",
+    "descriptiom" : "Ad free game about colorado potato beetle",
+    "link" : "https://test-2.com",
+    "img" : "https://www.gannett-cdn.com/-mm-/f5631f1aa54f5f3d4f524e474eb1bd04e3109397/c=0-267-3068-2000/local/-/media/2017/01/18/Phoenix/Phoenix/636203462330173396-trees-14.jpg?width=580&height=326&fit=crop",
+    "tags" : "potato, coloradoPotatoBeetle, clayGame"
+  },
+  "iosInstructions" : {
+    "tap": "TAP",
+    "thenTapTo": "AND THEN TAP TO"
+  },
+  "playOnMobile" : {
+    "title" : "PLAY ON YOUR PHONE",
+    "closeButton" : "PLAY HERE"
+  }
+}

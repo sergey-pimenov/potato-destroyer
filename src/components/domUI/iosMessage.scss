@@ -1,0 +1,92 @@
+.iosMessage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+  font-family: $content-font;
+  transition: all 0.2s;
+  background: rgba(black, 0.65);
+  -webkit-backdrop-filter: blur(3px);
+  color: #fed200;
+  
+  @at-root .domUI.showIOSInstruction & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .iosInstruction {
+    margin: auto 0 20px 0;
+    height: 62px;
+    padding: 0 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #4da1bf;
+    background-color: rgba(black, 0.4);
+    border-image: url(../img/borders.png);
+    border-image-width: 100px;
+    border-image-slice: 49.5% 49.5% 49.5% 49.5%;
+    font-size: 14px;
+    font-weight: 600;
+    
+    &::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: calc(50% - 10px);
+      bottom: -18px;
+      background: url(../img/downArrow.svg) no-repeat center top;
+      background-size: 100% auto;
+      z-index: -1;
+      animation: arrowAnim 0.4s infinite alternate;
+    }
+  }
+
+  .wordsWrapper {
+    display: flex;
+    justify-content: center;
+
+    .wordWrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @keyframes arrowAnim {
+    100% {
+      transform: translateY(1.5px);
+    }
+  }
+
+  .close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -30px;
+    top: -32px;
+    background: url(../img/close.png);
+    background-size: contain;
+  }
+
+  .iosActionsIcon {
+    width: 19px;
+    margin: 0 10px;
+    position: relative;
+    top: -3px;
+  }
+
+  .addToHome {
+    width: 25px;
+    margin-left: 10px;
+  }
+}
