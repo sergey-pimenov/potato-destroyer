@@ -334,8 +334,7 @@ var domUI = {
     var langToLoad = null;
 
     if(globalState.lang == 'ru-RU') langToLoad = 'ru';
-    // if(globalState.region == 'Belarus') langToLoad = 'by';
-    if(globalState.region == 'Belarus') langToLoad = 'en';
+    if(globalState.region == 'Belarus') langToLoad = 'by';
     if(langToLoad == null) langToLoad = 'en';
 
     getData(`content/${langToLoad}.json`, (content) => {
