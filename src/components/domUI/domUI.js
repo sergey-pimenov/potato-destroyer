@@ -452,7 +452,7 @@ var domUI = {
       <div class="about">
         <div class="aboutDescription">${aboutDescriptionContent}</div>
 
-        <a class="sourcesWrapper" href="https://github.com/sergey-pimenov" target="_blank">
+        <a class="sourcesWrapper" href="https://github.com/sergey-pimenov/potato-destroyer" target="_blank">
          <img class="githubLogo" src="img/github.png">
          <span class="sources"> ${sourcesContent} </span>
         </a>
