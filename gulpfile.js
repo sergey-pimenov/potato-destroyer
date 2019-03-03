@@ -109,8 +109,18 @@ gulp.task('browserSync', function() {
   })
 });
 
+gulp.task('minifyJSStatic', function (cb) {
+  pump([
+        gulp.src('./static/scripts/*.js'),
+        uglify(),
+        gulp.dest(dist + '/scripts')
+    ],
+    cb
+  );
+});
 
-gulp.task('minifyJS', ['compileJS'], function (cb) {
+
+gulp.task('minifyJS', ['compileJS', 'minifyJSStatic'], function (cb) {
   pump([
         gulp.src('./static/scripts/*.js'),
         uglify(),
