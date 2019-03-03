@@ -70,6 +70,7 @@ Prototype of plasticine PWA game. **Offline ready** & **installable**
 * 🕹 [Phaser 3](https://phaser.io/)
 * 🐉 [DragonBones](http://dragonbones.com/en/)
 * 🎨 Plasticine & Photoshop
+* 🌐 Deployed with [Netlify](https://www.netlify.com)
 
 <p>&nbsp</p>
 
