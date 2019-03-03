@@ -293,6 +293,8 @@ var domUI = {
       } else {
         domUI.startNode.focus();
       }
+
+      domUI.pwaIstall(); // 5. Install PWA if it's possible
     }
   },
 
@@ -392,10 +394,10 @@ var domUI = {
   },
 
   actionsBar() {
-    var fontScale = 0.18;
+    var fontScale = 0.14;
 
-    if(window.gameWidth < 360) fontScale = 0.14;
-    if(globalState.platform == 'desktop') fontScale = 0.21;
+    if(window.gameWidth < 360) fontScale = 0.11;
+    if(globalState.platform == 'desktop') fontScale = 0.135;
 
     var shareButton = convertToBitmapFont(domUI.content.share.buttonName, '../font/font-2.png', fontScale, domUI.font);
     var installContent = convertToBitmapFont(domUI.content.install, '../font/font-2.png', fontScale, domUI.font);
@@ -529,7 +531,6 @@ var domUI = {
       domUI.showIOSInstruction();
     } else {
       domUI.deferredPWAPrompt.prompt();
-
       domUI.deferredPWAPrompt.userChoice
         .then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
