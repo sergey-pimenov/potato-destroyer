@@ -73,7 +73,7 @@ Prototype of plasticine PWA game. **Offline ready** & **installable**
 
 <p>&nbsp</p>
 
-👼 This is my first attempt at making games so sorry for the quality 💩 of the code and everything else.
+This is my first attempt at making games so sorry for the quality 💩 of the code and everything else.
 
 <p>&nbsp</p>
 
