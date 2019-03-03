@@ -1,8 +1,10 @@
-# 🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥
+### 🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥🥔💥
+
+<p>&nbsp</p>
+
 ### Potato Destroyer
 
 Prototype of plasticine PWA game. **Offline ready** & **installable**
-
 
 <p>&nbsp</p>
 
@@ -13,6 +15,10 @@ Prototype of plasticine PWA game. **Offline ready** & **installable**
 </p>
 
 <p>&nbsp</p>
+<p>&nbsp</p>
+
+---
+
 <p>&nbsp</p>
 
 ### Repo contains all graphic sources and animations
@@ -29,7 +35,6 @@ Prototype of plasticine PWA game. **Offline ready** & **installable**
 </p>
 
 <p>&nbsp</p>
-<p>&nbsp</p>
 
 #### Bitmap pseudo-plasticine fonts:
 
@@ -45,10 +50,36 @@ Prototype of plasticine PWA game. **Offline ready** & **installable**
 
 <p>&nbsp</p>
 
+---
 
-### Created with:
-* Phaser 3
+<p>&nbsp</p>
 
-<a color="red" href="http://dragonbones.com/en/"> DragonBones </a>
+### ⛏ How to build project:
 
-<span style="color:red">some *blue* text</span>.
+1. Install Node.js
+2. Run `npm i` at root directory
+3. Run `gulp` or `gulp prod` (for production build)
+
+<p>&nbsp</p>
+
+---
+
+<p>&nbsp</p>
+
+### Created by [Sergey Pimenov](https://github.com/sergey-pimenov) with ❤️ and:
+* 🕹 [Phaser 3](https://phaser.io/)
+* 🐉 [DragonBones](http://dragonbones.com/en/)
+* 🎨 Plasticine & Photoshop
+
+<p>&nbsp</p>
+
+👼 This is my first attempt at making games so sorry for the quality 💩 of the code and everything else.
+
+<p>&nbsp</p>
+
+<p align="center">
+  <p align="center">
+    <img width="400" src="readme_content/potatos.gif">
+  </p>
+  <p align="center"> Destroy potatoes! </p>
+</p>
