@@ -1,12 +1,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    rename = require('gulp-rename'),
     webpackStream = require('webpack-stream'),
     webpack = require('webpack'),
-    flatten = require('gulp-flatten'),
-    watch = require('gulp-watch'),
     gulp = require('gulp'),
-    swPrecache = require('sw-precache'),
     browserSync = require('browser-sync').create();
 
 
@@ -35,9 +31,8 @@ gulp.task('generate-service-worker', function(callback) {
 });
 
 
-
-gulp.task('devStaticTransporter', function() {  
-  gulp.src('./static/**/*.*')
+gulp.task('staticTransporter', function() {  
+  gulp.src('./static/**/*')
     .pipe(gulp.dest(dist))
     .pipe(browserSync.reload({
       stream: true
@@ -53,6 +48,7 @@ gulp.task('transportHTML', function() {
     }));
 });
 
+
 gulp.task('transportContent', function() {
   gulp.src('./content/**/*')
     .pipe(gulp.dest(dist + '/content'))
@@ -62,9 +58,9 @@ gulp.task('transportContent', function() {
 });
 
 
-gulp.task('prodStaticTransporter', function() {
-  return gulp.src(static + '/**/*')
-    .pipe(gulp.dest(dist));
+gulp.task('prodTransportStatic', function() {
+  gulp.src('./static/**/*')
+    .pipe(gulp.dest(dist))
 });
 
 
@@ -114,9 +110,9 @@ gulp.task('browserSync', function() {
 });
 
 
-gulp.task('MinifyJS', ['compileJS'], function (cb) {
+gulp.task('minifyJS', ['compileJS'], function (cb) {
   pump([
-        gulp.src(dist + '/scripts/**/*.js'),
+        gulp.src('./static/scripts/*.js'),
         uglify(),
         gulp.dest(dist + '/scripts')
     ],
@@ -125,7 +121,7 @@ gulp.task('MinifyJS', ['compileJS'], function (cb) {
 });
 
 
-gulp.task('minifyCSS', ['compileSass', 'setPrefixes'], function () {
+gulp.task('minifyCSS', ['compileSass', 'setPrefixes', 'prodTransportStatic'], function () {
   return gulp.src(dist + '/styles/**/*.css')
     .pipe(cleanCSS())
     .pipe(gulp.dest(dist + '/styles'));
@@ -142,7 +138,7 @@ gulp.task('setPrefixes', function(){
 });
 
 
-gulp.task('minifyHTML', ['i18n'], function() {
+gulp.task('minifyHTML', ['transportHTML'], function() {
   return gulp.src(dist + '/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(dist));
@@ -153,7 +149,7 @@ gulp.task('minifyHTML', ['i18n'], function() {
 gulp.task('default', [
                       'transportContent',
                       'transportHTML',
-                      'devStaticTransporter',
+                      'prodTransportStatic',
                       'browserSync',
                       'compileSass',
                       'compileJS',
@@ -161,7 +157,7 @@ gulp.task('default', [
   function() {
     gulp.watch([src + '/**/*.html'], ['transportHTML']);
     gulp.watch(['content/**/*'], ['transportContent']);
-    gulp.watch([static + '/**/*.*'], ['devStaticTransporter']);
+    gulp.watch([static + '/**/*.*'], ['staticTransporter']);
     gulp.watch([src + '/**/*.scss', 'src/index.scss'], ['compileSass']);
     gulp.watch([src + '/**/*.js', 'src/index.js'], ['compileJS']);
 });
@@ -169,13 +165,10 @@ gulp.task('default', [
 
 ///// Production & Netlify /////
 gulp.task('prod', [
+                    'prodTransportStatic',
                     'transportContent',
                     'transportHTML',
-                    'compileSass',
-                    'compileJS',
-                    'compileSass',
-                    'compileJS',
-                    'MinifyJS',
                     'minifyCSS',
-                    'minifyHTML'
+                    'minifyHTML',
+                    'minifyJS'
                   ]);

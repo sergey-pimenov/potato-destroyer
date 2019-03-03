@@ -14,7 +14,6 @@ var glassesDelay = 3000;
 */
 
 var storkInterval = 15000;
-var storkInterval = 3000;
 var storkDelay = 0;
 
 var tractorInterval = 12000;
