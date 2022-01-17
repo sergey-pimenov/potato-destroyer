@@ -79,7 +79,6 @@ var domUI = {
               start();
             }
           })
-          .catch(alert(console.error));
       } else {
         start();
       }
