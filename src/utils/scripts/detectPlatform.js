@@ -21,7 +21,10 @@ export default function() {
     return check;
   };
 
-  if (mobileAndTabletcheck()) {
+  var mobileWidth = (document.body.getBoundingClientRect().width <= 450);
+  var mobileHeight = (document.body.getBoundingClientRect().width <= 1000);
+
+  if (mobileAndTabletcheck() && mobileWidth && mobileHeight) {
     document.body.classList.add('mobile');
     globalState.platform = 'mobile';
   } else {
