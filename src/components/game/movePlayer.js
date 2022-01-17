@@ -145,13 +145,12 @@ var movePlayer = {
 
   init() {
     window.addEventListener('detectAccelerometerSupporting', () => {
-      if(globalState.accelerometer && globalState.platform == 'mobile') {
+      if(globalState.accelerometer) {
         movePlayer.selectedInterface = movePlayer.byDeviceRotating;
         movePlayer.byDeviceRotating();
       } else {
         movePlayer.byArrows.init();
         movePlayer.selectedInterface = movePlayer.byArrows.updatePosition;
-        movePlayer.byDeviceRotating();
       }
     });
   }
