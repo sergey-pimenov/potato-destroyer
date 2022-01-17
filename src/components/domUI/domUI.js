@@ -3,6 +3,8 @@ import actions from './../game/actions';
 import globalState from './../../globalState';
 import getData from './../../utils/scripts/getData';
 import convertToBitmapFont from './../../utils/scripts/convertToBitmapFont';
+import getAngle from './../../basic/scripts/getAngle';
+import movePlayer from './../game/movePlayer';
 
 // Don't do like I'am. This was very painfull
 // I had to eat a lot of shit while I was doing the UI
@@ -85,6 +87,8 @@ var domUI = {
     });
 
     function start() {
+      getAngle.init();
+      movePlayer.init();
       actions.startGame();
       domUI.hideMenu();
       domUI.domUINode.classList.add('gameStarted');
