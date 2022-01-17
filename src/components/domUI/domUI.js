@@ -81,7 +81,7 @@ var domUI = {
               start();
             } else {
               start();
-              actions.player.setDraggable();
+              actions.player.setDraggable()
             }
           })
       } else {
