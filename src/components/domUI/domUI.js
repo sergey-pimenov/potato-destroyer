@@ -77,7 +77,12 @@ var domUI = {
       if (window.DeviceMotionEvent && typeof window.DeviceMotionEvent.requestPermission === 'function') {
         DeviceMotionEvent.requestPermission()
           .then(permissionState => {
-            start();
+            if (permissionState === 'granted') {
+              start();
+            } else {
+              start();
+              actions.player.setDraggable();
+            }
           })
       } else {
         start();
