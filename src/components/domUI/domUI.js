@@ -81,12 +81,12 @@ var domUI = {
               start();
             } else {
               start();
-              actions.player.setDraggable()
             }
           })
       } else {
         start();
       }
+      actions.player.setDraggable();
     });
 
     function start() {
