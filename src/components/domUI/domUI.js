@@ -77,9 +77,7 @@ var domUI = {
       if (window.DeviceMotionEvent && typeof window.DeviceMotionEvent.requestPermission === 'function') {
         DeviceMotionEvent.requestPermission()
           .then(permissionState => {
-            if (permissionState === 'granted') {
-              start();
-            }
+            start();
           })
       } else {
         start();
