@@ -76,10 +76,12 @@ var domUI = {
         DeviceMotionEvent.requestPermission()
           .then(permissionState => {
             if (permissionState === 'granted') {
-              start()
+              start();
             }
           })
           .catch(alert(console.error));
+      } else {
+        start();
       }
 
       function start() {
