@@ -301,15 +301,15 @@ var domUI = {
   setupLocalisation(callback) {
     if(localStorage.getItem('region') != null) {
       globalState.region = localStorage.getItem('region');
+      callback();
     } else {
       getData('https://api.freegeoip.app/json/?apikey=d5d45350-77d4-11ec-a060-dd9c2321fe97', (response) => {
         globalState.region = JSON.parse(response).country_code;
 
         localStorage.setItem('region', globalState.region);
+        callback();
       });
     }
-
-    callback();
   },
   
   pwaIstall() {
