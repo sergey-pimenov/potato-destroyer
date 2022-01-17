@@ -72,7 +72,7 @@ var domUI = {
     });
 
     domUI.startNode.addEventListener('click', () => {
-      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      if (window.DeviceMotionEvent && typeof window.DeviceMotionEvent.requestPermission === 'function') {
         DeviceMotionEvent.requestPermission()
           .then(permissionState => {
             if (permissionState === 'granted') {
@@ -82,19 +82,9 @@ var domUI = {
       } else {
         start();
       }
-
-      function start() {
-        actions.startGame();
-        domUI.hideMenu();
-        domUI.domUINode.classList.add('gameStarted');
-        
-        if (screenfull.enabled) {
-          screen.orientation.lock("portrait-primary");
-        }
-      }
     });
 
-    domUI.startNode.addEventListener('touchend', () => {
+    function start() {
       actions.startGame();
       domUI.hideMenu();
       domUI.domUINode.classList.add('gameStarted');
@@ -102,7 +92,7 @@ var domUI = {
       if (screenfull.enabled) {
         screen.orientation.lock("portrait-primary");
       }
-    });
+    }
 
     domUI.resumeButtonNode.addEventListener('click', () => {
       actions.resume();
