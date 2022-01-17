@@ -72,12 +72,24 @@ var domUI = {
     });
 
     domUI.startNode.addEventListener('click', () => {
-      actions.startGame();
-      domUI.hideMenu();
-      domUI.domUINode.classList.add('gameStarted');
-      
-      if (screenfull.enabled) {
-        screen.orientation.lock("portrait-primary");
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              start()
+            }
+          })
+          .catch(alert(console.error));
+      }
+
+      function start() {
+        actions.startGame();
+        domUI.hideMenu();
+        domUI.domUINode.classList.add('gameStarted');
+        
+        if (screenfull.enabled) {
+          screen.orientation.lock("portrait-primary");
+        }
       }
     });
 
