@@ -5,6 +5,7 @@ export default function() {
   // This because DragonBones object haven't any integration at Phaser's physical engine
   globalState.playerAnimated = this.add.armature('bee');
   globalState.playerAnimated.animation.play('walk');
+  globalState.playerAnimated.x = window.gameWidth;
   globalState.playerAnimated.y = window.gameHeight * 2 - 160;
   globalState.playerAnimated.yInitial = globalState.playerAnimated.y;
   globalState.playerAnimated.scaleX = 0.8;
