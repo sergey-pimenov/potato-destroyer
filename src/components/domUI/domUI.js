@@ -301,27 +301,15 @@ var domUI = {
   setupLocalisation(callback) {
     if(localStorage.getItem('region') != null) {
       globalState.region = localStorage.getItem('region');
-      readyToGetContent();
     } else {
-      getData('https://geoip-db.com/json/', (response) => {
-        globalState.region = JSON.parse(response).country_name;
+      getData('http://ip-api.com/json/?fields=status,message,countryCode', (response) => {
+        globalState.region = JSON.parse(response).countryCode;
 
         localStorage.setItem('region', globalState.region);
-        readyToGetContent();
       });
     }
 
-    function readyToGetContent() {
-      globalState.lang = navigator.language || navigator.userLanguage;
-
-      if(globalState.region == 'Belarus') {
-        globalState.lang = 'be-BY';
-      }
-
-      console.log('Region: ' + globalState.region + ', lang: ' + globalState.lang);
-
-      callback();
-    }
+    callback();
   },
   
   pwaIstall() {
@@ -335,8 +323,8 @@ var domUI = {
   getContent(callback) {
     var langToLoad = null;
 
-    if(globalState.lang == 'ru-RU') langToLoad = 'ru';
-    if(globalState.region == 'Belarus') langToLoad = 'by';
+    if(globalState.lang == 'RU') langToLoad = 'ru';
+    if(globalState.region == 'BY') langToLoad = 'by';
     if(langToLoad == null) langToLoad = 'en';
 
     getData(`content/${langToLoad}.json`, (content) => {
