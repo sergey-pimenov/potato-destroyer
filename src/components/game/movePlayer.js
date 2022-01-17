@@ -151,6 +151,7 @@ var movePlayer = {
       } else {
         movePlayer.byArrows.init();
         movePlayer.selectedInterface = movePlayer.byArrows.updatePosition;
+        movePlayer.byDeviceRotating();
       }
     });
   }

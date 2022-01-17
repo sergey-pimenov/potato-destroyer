@@ -1,5 +1,4 @@
 import globalState from './../../globalState';
-import { get } from 'https';
 
 var getAngle = {
   degreeY : 0,
