@@ -12,6 +12,8 @@ if ('serviceWorker' in navigator) {
 // Utils
 import detectPlatform from './utils/scripts/detectPlatform';
 
+// Basic
+import getAngle from './basic/scripts/getAngle';
 
 // Global state
 import globalState from './globalState';
@@ -19,6 +21,7 @@ import globalState from './globalState';
 // Components
 import domUI from './components/domUI/domUI';
 import game from './components/game/game';
+import movePlayer from './components/game/movePlayer';
 
 detectPlatform();
 
