@@ -6,7 +6,6 @@ import domUI from './../domUI/domUI';
 var actions = {
   player : {
     setDraggable() {
-      alert('draggable')
       console.log('Set player draggable');
 
       globalState.player.visible = true;
